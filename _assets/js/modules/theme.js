@@ -27,32 +27,38 @@ const Theme = {
 
     let links = document.getElementsByClassName('card-link');
 
-    for (let link of links) {
-      for (let card of Util.getParents(link, '.card')) {
-        let h2List = card.getElementsByTagName('h2'),
-          imgList = card.getElementsByTagName('img');
+    for (let i = 0; i < links.length; ++i) {
+      let cards = Util.getParents(links[i], '.card');
+
+      for (let j = 0; j < cards.length; ++j) {
+        let h2List = cards[j].getElementsByTagName('h2'),
+            imgList = cards[j].getElementsByTagName('img');
 
         // Add active classes on mouseover
-        link.addEventListener('mouseover', function() {
-          for (let h2 of h2List) {
-            for (let a of h2.getElementsByTagName('a')) {
-              a.classList.add('active');
+        links[i].addEventListener('mouseover', function() {
+          for (let i = 0; i < h2List.length; ++i) {
+            let aList = h2List[i].getElementsByTagName('a');
+
+            for (let i = 0; i < aList.length; ++i) {
+              aList[i].classList.add('active');
             }
           }
-          for (let img of imgList) {
-            img.classList.add('active');
+          for (let i = 0; i < imgList.length; ++i) {
+            imgList[i].classList.add('active');
           }
         }, false);
 
         // Remove active classes on mouseout
-        link.addEventListener('mouseout', function() {
-          for (let h2 of h2List) {
-            for (let a of h2.getElementsByTagName('a')) {
-              a.classList.remove('active');
+        links[i].addEventListener('mouseout', function() {
+          for (let i = 0; i < h2List.length; ++i) {
+            let aList = h2List[i].getElementsByTagName('a');
+
+            for (let i = 0; i < aList.length; ++i) {
+              aList[i].classList.remove('active');
             }
           }
-          for (let img of imgList) {
-            img.classList.remove('active');
+          for (let i = 0; i < imgList.length; ++i) {
+            imgList[i].classList.remove('active');
           }
         }, false);
       }
@@ -67,10 +73,10 @@ const Theme = {
 
     let links = document.getElementsByTagName('a');
 
-    for (let link of links) {
+    for (let i = 0; i < links.length; ++i) {
       // Get anchor links
-      if (link.href && link.href.indexOf('#') !== -1) {
-        link.addEventListener('click', function() {
+      if (links[i].href && links[i].href.indexOf('#') !== -1) {
+        links[i].addEventListener('click', function() {
           let target = this.hash.substr(1);
 
           Scroll.smooth(

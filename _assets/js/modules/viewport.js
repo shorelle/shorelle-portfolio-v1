@@ -63,7 +63,7 @@ const Viewport = {
 
     // Global class for revealing element
     var revealer = document.querySelectorAll('.revealer');
-
+    
     // Get the viewport (window) dimensions
     var getViewportSize = function() {
       return {
