@@ -3,7 +3,7 @@
  * ========================================================================== */
 
 .revealer {
-  transform: translateY(50px);
+  transform: translateY(20px);
   opacity: 0.9;
 
   img {
@@ -11,15 +11,11 @@
   }
 
   &.revealed {
-    animation: slide-in 1.4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    animation: slide-in 1.8s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 
     img {
       animation: blur-in 1s ease forwards;
     }
-  }
-
-  &.illustration {
-    transform: translateY(20px);
   }
 
   &.post-header {
