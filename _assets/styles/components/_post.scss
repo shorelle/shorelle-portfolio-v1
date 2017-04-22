@@ -108,9 +108,10 @@ article.post {
     a {
       color: $text-color;
       text-decoration: none;
+      span { transition: all 90ms ease-in-out; }
 
       &:hover {
-        span.label { border-bottom: 4px solid $green; }
+        span.label { color: $primary-color; }
         span.title { color: lighten($darkgrey, 30%); }
       }
     }
