@@ -6,6 +6,7 @@
 // -------------------
 $breakpoints: (
 	'mobile': (max-width: 667px),
+	'not-mobile': (min-width: 668px),
 	'tablet-portrait': (max-width: 768px),
 	'tablet-landscape': (max-width: 1024px),
 	'desktop': (min-width: 1367px)

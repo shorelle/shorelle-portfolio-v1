@@ -25,7 +25,7 @@ article.card {
       @include respond-to('mobile') {
         box-shadow: 5px 5px 0px 0px $base-color;
       }
-
+      
       &:hover,
       &.active {
         transform: scale(1.01);
@@ -79,9 +79,11 @@ article.card {
           transition: all .2s ease-in-out;
         }
 
-        &:hover:before,
-        &.active:before {
-          width: calc(100% + 5em);
+        @include respond-to('not-mobile') {
+          &:hover:before,
+          &.active:before {
+            width: calc(100% + 5em);
+          }
         }
       }
 
@@ -130,9 +132,11 @@ article.card {
           left: 0;
         }
 
-        &:hover:before,
-        &.active:before {
-          width: calc(10em);
+        @include respond-to('not-mobile') {
+          &:hover:before,
+          &.active:before {
+            width: calc(10em);
+          }
         }
       }
     }

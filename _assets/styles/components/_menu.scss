@@ -18,7 +18,8 @@ ul.site-menu {
 	}
 
 	@include respond-to('mobile') {
-		@include vr-font-size($h4-font-size);  }
+		@include vr-font-size($h4-font-size);
+	}
 
 	li {
 		position: relative;
@@ -26,8 +27,8 @@ ul.site-menu {
 		list-style: none;
 
 		@include respond-to('tablet-portrait') {
-			font-size: .8em;
-			line-height: .8;
+			font-size: .9em;
+			line-height: .9;
 		}
 
 		&:after {
@@ -35,8 +36,20 @@ ul.site-menu {
 			@include vr-margin(0 $mod-xs);
 		}
 
-		&:last-child:after {
-			display: none;
+		&:nth-last-child(2):after {
+			@include respond-to('mobile') {
+				display: none;
+			}
+		}
+
+		&:last-child {
+			@include respond-to('mobile') {
+				display: none;
+			}
+
+			&:after {
+				display: none;
+			}
 		}
 
 		a {
