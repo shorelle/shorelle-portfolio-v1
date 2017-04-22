@@ -1,0 +1,23 @@
+/* 
+ * Typography
+ * ========================================================================== */
+
+body {
+  color: $text-color;
+}
+
+a {
+  color: $primary-color;
+  font-weight: normal;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+/* Headings */
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: normal;
+}

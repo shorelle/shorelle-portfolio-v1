@@ -1,0 +1,52 @@
+/* 
+ * Component - Animation
+ * ========================================================================== */
+
+.revealer {
+  transform: translateY(50px);
+  opacity: .9;
+
+  img {
+    filter: blur(1px);
+  }
+
+  &.revealed {
+    animation: slide-in 1.6s cubic-bezier(.075,.82,.165,1) forwards;
+
+    img {
+      animation: blur-in 1s ease forwards;
+    }
+  }
+
+  &.illustration {
+    transform: translateY(20px);
+  }
+
+  &.post-header {
+    opacity: .7;
+    transform: translateY(10px);
+  }
+
+  // Reset if animation not supported
+  .no-animation & {
+    transform: translateY(0);
+    opacity: 1;
+
+    img {
+      filter: blur(0);
+    }
+  }
+}
+
+@keyframes blur-in {
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes slide-in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

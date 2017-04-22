@@ -1,0 +1,59 @@
+/* 
+ * Component - Header
+ * ========================================================================== */
+
+header.site-header {
+  @include vr(margin-top, $mod-s);
+ 	font-family: $heading-font;
+  text-transform: lowercase;
+
+  @include respond-to('mobile') {
+    @include vr(margin-top, $mod-xxs);
+  }
+
+ 	a {
+ 		color: $text-color;
+		text-decoration: none;
+
+    &:hover {
+      color: $blue;
+    }
+ 	}
+	
+	.content {
+    @include columns(12,0,0);
+
+    @include respond-to('tablet-portrait') {
+      padding-bottom: 0;
+    }
+
+    @include respond-to('mobile') {
+      @include vr(padding-bottom, $mod-xs);
+    }
+
+	}
+
+	.site-title {
+    @include columns(2,0,0);
+    @include responsive-columns('tablet-landscape',2.5,0,0);
+    @include responsive-columns('tablet-portrait',3.2,0,0);
+    @include responsive-columns('mobile',0.25,0.02,0);
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+	}
+
+	.site-nav {
+    @include columns(10,0,0);
+    @include responsive-columns('tablet-landscape',9.5,0,0);
+    @include responsive-columns('tablet-portrait',8.8,0,0);
+    @include responsive-columns('mobile',0.69,0,0);
+    text-align: right;
+
+		.menu-icon {
+			display: none;
+		}
+	}
+}

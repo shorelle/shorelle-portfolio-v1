@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<article class="card featured">
+  <h1 class="intro">Illustration</h1>
+  <p class="sub-intro">My inspirations are a mixture of western &amp; eastern animation and graphic novels.<br>I aim to interpret stories I love in a fresh and lyrical way.</p>
+</article>
+
+{% assign sorted = site.illustration | sort:"order" %}
+{% for post in sorted %}
+  <article class="card illustration revealer {{ post.orientation }}">
+    <img src="/assets/img/illustration/feature-{{ post.slug }}.jpg" alt="{{ post.title }}">
+  </article>
+{% endfor %}

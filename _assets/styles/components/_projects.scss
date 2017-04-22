@@ -1,0 +1,36 @@
+/* 
+ * Component - Project Colours
+ * ========================================================================== */
+
+article.card .card-content h2 a {
+  
+  /* Web */
+  &.colorthieves:before {
+    background: #3cbfc4;
+  }
+
+  &.planets:before {
+    background: #c4763c;
+  }
+
+  /* Design */
+  &.altair:before {
+    background: #f5c400;
+  }
+
+  &.anansi-boys:before {
+    background: #b86628;
+  }
+
+  &.mosi:before {
+    background: #20bfdc;
+  }
+
+  &.san:before {
+    background: #efebf0;
+  }
+
+  &.spotify:before {
+    background: #44a282;
+  }
+}

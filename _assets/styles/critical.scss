@@ -1,0 +1,22 @@
+/* 
+ * Critical CSS
+ * ========================================================================== */
+
+/* Helper functions */
+@import 'mixins/*.scss';
+
+/* Variables */
+@import '_variables.scss';
+
+/* HTML element rules */
+@import 'base/_normalize.scss';
+@import 'base/_typography.scss';
+@import 'base/_global.scss';
+
+/* Layout rules */
+@import 'base/_layout.scss';
+
+/* Component rules */
+@import 'components/_header.scss';
+@import 'components/_menu.scss';
+@import 'components/_card-featured.scss';

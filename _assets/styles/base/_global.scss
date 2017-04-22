@@ -1,0 +1,33 @@
+/* 
+ * Global
+ * ========================================================================== */
+
+span.label {
+  font-weight: bold;
+}
+
+i.fa {
+  display: inline-block;
+  min-width: 17px;
+  margin-right: 0.5em;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.tablet-only {
+  display: none;
+
+  @include respond-to('tablet-landscape') {
+    display: block;
+  }
+}
+
+.desktop-only {
+  display: block;
+
+  @include respond-to('tablet-landscape') {
+    display: none !important;
+  }
+}

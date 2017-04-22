@@ -1,0 +1,28 @@
+/* 
+ * Component - Illustration Card
+ * ========================================================================== */
+
+article.card.illustration {
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.portrait {
+    img {
+      max-width: 540px;
+
+      @include respond-to('mobile') {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &.double {
+    @include columns(6);
+  }
+}

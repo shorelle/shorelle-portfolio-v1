@@ -1,0 +1,12 @@
+/* 
+ * No Javascript fallbacks
+ * ========================================================================== */
+
+.revealer {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+
+  img {
+    filter: blur(0) !important;
+  }
+}

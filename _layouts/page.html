@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header revealer">
+    <img src="/assets/img/design/{{ page.slug }}-feature.jpg" alt=""></a>
+    <h2>{{ page.excerpt }}</h2>
+  </header>
+  <div class="post-images">
+    {% for image in page.images %}
+      <img src="/assets/img/design/{{ image.path }}" alt="{{ image.title }}">
+    {% endfor %}
+  </div>
+  <div class="post-content">
+    {{ page.content | remove: page.excerpt }}
+  </div>
+  <footer class="post-footer">
+    <div class="previous">
+    {% if page.previous != nil %}
+      <a href="{{ page.previous.url }}"><span class="label">&larr; previous</span><br><span class="title">{{ page.previous.title }}</span></a>
+    {% else %}
+      <span class="inactive">&larr; previous</span>
+    {% endif %}
+    </div>
+    <div class="next">
+    {% if page.next != nil %}
+      <a href="{{ page.next.url }}"><span class="label">next &rarr;</span><br><span class="title">{{ page.next.title }}</span></a>
+    {% else %}
+      <span class="inactive">next &rarr;</span>
+    {% endif %}
+    </div>
+    <div class="collection">
+      <a href="/{{ page.collection }}"><span class="label">back to {{ page.collection }}</span></a>
+    </div>
+  </footer>
+</article>
