@@ -159,7 +159,9 @@ gulp.task('clean:images', () => {
 gulp.task('build:jekyll', () => {
   return gulp.src('')
     .pipe($.plumber())
-    .pipe($.run('bundle exec jekyll build'));
+    .pipe($.if(argv.prod, 
+      $.run('JEKYLL_ENV=production bundle exec jekyll build'), 
+      $.run('bundle exec jekyll build')));
 });
 
 /*

@@ -1,4 +1,7 @@
 <script type="text/javascript" src="/assets/js/main.js" async></script>
+{% if jekyll.environment == "production" and site.google_analytics %}
+  {% include google-analytics.html %}
+{% endif %}
 <noscript>
   <link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
   <link rel="stylesheet" type="text/css" href="/assets/styles/no-js.css">
