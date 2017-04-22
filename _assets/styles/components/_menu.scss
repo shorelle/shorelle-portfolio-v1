@@ -1,64 +1,66 @@
-/* 
+/*
  * Component - Menu
  * ========================================================================== */
 
 ul.site-menu {
-	@include vr-font-size($h3-font-size);
-	@include vr-line-height($h3-font-size);
-	@include vr(margin-top, $mod-m);
-	border-bottom: 2px solid $text-color;
-	padding-left: 0;
+  @include vr-font-size($h3-font-size);
+  @include vr-line-height($h3-font-size);
+  @include vr(margin-top, $mod-m);
 
-	@include respond-to('tablet-landscape') {
-		@include vr(margin-top, $mod-s);
-	}
+  border-bottom: 2px solid $text-color;
+  padding-left: 0;
 
-	@include respond-to('tablet-portrait') {
-		@include vr(margin-top, $mod-m);
-	}
+  @include respond-to('tablet-landscape') {
+    @include vr(margin-top, $mod-s);
+  }
 
-	@include respond-to('mobile') {
-		@include vr-font-size($h4-font-size);
-	}
+  @include respond-to('tablet-portrait') {
+    @include vr(margin-top, $mod-m);
+  }
 
-	li {
-		position: relative;
-		display: inline;
-		list-style: none;
+  @include respond-to('mobile') {
+    @include vr-font-size($h4-font-size);
+  }
 
-		@include respond-to('tablet-portrait') {
-			font-size: .9em;
-			line-height: .9;
-		}
+  li {
+    position: relative;
+    display: inline;
+    list-style: none;
 
-		&:after {
-			content: '|';
-			@include vr-margin(0 $mod-xs);
-		}
+    @include respond-to('tablet-portrait') {
+      font-size: 0.9em;
+      line-height: 0.9;
+    }
 
-		&:nth-last-child(2):after {
-			@include respond-to('mobile') {
-				display: none;
-			}
-		}
+    &::after {
+      content: '|';
 
-		&:last-child {
-			@include respond-to('mobile') {
-				display: none;
-			}
+      @include vr-margin(0 $mod-xs);
+    }
 
-			&:after {
-				display: none;
-			}
-		}
+    &:nth-last-child(2)::after {
+      @include respond-to('mobile') {
+        display: none;
+      }
+    }
 
-		a {
-			display: inline-block;
-			margin-left: -8px; // Compensate for inline-block gap
+    &:last-child {
+      @include respond-to('mobile') {
+        display: none;
+      }
 
-			&.current { 
-				color: $primary-color;
-			}
-		}
-	}
+      &::after {
+        display: none;
+      }
+    }
+
+    a {
+      display: inline-block;
+      margin-left: -8px; // Compensate for inline-block gap
+
+      &.current {
+        color: $primary-color;
+      }
+    }
+  }
 }

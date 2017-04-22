@@ -26,6 +26,7 @@
 
 html {
   font-family: $base-font; /* 1 */
+
   @if $normalize-vertical-rhythm {
     // Correct old browser bug that prevented accessible resizing of text
     // when root font-size is set with px or em.
@@ -34,9 +35,11 @@ html {
     // $base-line-height variables.
     line-height: ($base-line-height / $base-font-size) * 1em; /* 2 */
   }
+
   @else {
     line-height: 1.15; /* 2 */
   }
+
   -ms-text-size-adjust: 100%; /* 3 */
   -webkit-text-size-adjust: 100%; /* 3 */
 }
@@ -72,6 +75,7 @@ section {
 
 h1 {
   @include vr-font-size($h1-font-size);
+
   @if $normalize-vertical-rhythm {
     @include vr-line-height($h1-font-size);
   }
@@ -80,6 +84,7 @@ h1 {
     /* Set 1 unit of vertical rhythm on the top and bottom margins. */
     @include vr-margin(1 0, $h1-font-size);
   }
+
   @else {
     margin: 0.67em 0;
   }
@@ -174,6 +179,7 @@ figure {
   @if $normalize-vertical-rhythm {
     @include vr-margin(1 $indent-amount);
   }
+
   @else {
     margin: 1em $indent-amount;
   }
@@ -215,7 +221,7 @@ main {
  */
 
 %monospace {
-  font-family: monospace, monospace; /* 1 */
+  font-family: monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -412,9 +418,11 @@ textarea {
   @if $normalize-vertical-rhythm {
     @include vr-line-height($base-font-size); /* 1 */
   }
+
   @else {
     line-height: 1.15; /* 1 */
   }
+
   font-family: $base-font; /* 1 */
   font-size: 100%; /* 1 */
   margin: 0; /* 2 */
@@ -455,7 +463,6 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-
   /**
    * Remove the inner border and padding in Firefox.
    */
@@ -593,7 +600,6 @@ details {
 summary {
   display: list-item;
 }
-
 
 /*
  * Add the correct display in IE 9-.

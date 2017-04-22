@@ -1,24 +1,28 @@
-/* 
+/*
  * Component - Featured Card
  * ========================================================================== */
 
 article.card.featured {
   @include vr-margin($mod-l 0 $mod-xl);
+
   @include respond-to('mobile') {
     @include vr(margin-bottom, $mod-m);
   }
+
   @include columns(11);
   @include responsive-columns('desktop', 10);
 
   .intro {
     @include vr-font-size($h2-font-size);
     @include vr-line-height($h2-font-size);
+
     margin-bottom: 0;
     font-family: $heading-font;
     letter-spacing: -0.5px;
 
     @include respond-to('mobile') {
       @include vr-font-size($h3-font-size);
+
       letter-spacing: 0;
     }
   }

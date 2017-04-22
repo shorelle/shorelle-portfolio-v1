@@ -64,9 +64,28 @@ gulp.task('build:styles:critical', () => {
 });
 
 /*
+ * Lint source files
+ */
+gulp.task('lint:styles', function() {
+  return gulp.src(paths.sassFilesGlob)
+              .pipe($.plumber())
+              .pipe($.stylelint({
+                reporters: [{
+                  formatter: 'string', 
+                  console: true
+                }],
+                failAfterError: true
+              }));
+});
+
+/*
  * Builds all styles
  */
-gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
+gulp.task('build:styles', (done) => {
+  runSequence('lint:styles',
+              ['build:styles:main', 'build:styles:critical'],
+              done);
+});
 
 /*
  * Deletes processed CSS
@@ -126,7 +145,7 @@ gulp.task('clean:scripts', () => {
  * Lint source files
  */
 gulp.task('lint:scripts', function() {
-  return gulp.src(paths.jsFiles + '/**/*.js')
+  return gulp.src(paths.jsFilesGlob)
               .pipe($.plumber())
               .pipe($.eslint())
               .pipe($.eslint.format())
@@ -222,20 +241,20 @@ gulp.task('serve', ['build'], () => {
   gulp.watch(['_config.yml'], ['build:jekyll:watch']);
 
   // Watch .scss files; changes are piped to browserSync
-  gulp.watch('_assets/styles/**/*.scss', ['build:styles']);
+  gulp.watch(paths.sassFilesGlob, ['build:styles']);
 
   // Watch .js files.
-  gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
+  gulp.watch(paths.jsFilesGlob, ['build:scripts:watch']);
 
   // Watch image files; changes are piped to browserSync
-  gulp.watch('_assets/img/**/*', ['build:images']);
+  gulp.watch(paths.imageFilesGlob, ['build:images']);
 
   // Watch posts.
-  gulp.watch('_posts/**/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+  gulp.watch(paths.jekyllPostFilesGlob, ['build:jekyll:watch']);
 
   // Watch drafts if --drafts flag was passed
   if (module.exports.drafts) {
-      gulp.watch('_drafts/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+      gulp.watch(paths.jekyllDraftFilesGlob, ['build:jekyll:watch']);
   }
 
   // Watch html and markdown files

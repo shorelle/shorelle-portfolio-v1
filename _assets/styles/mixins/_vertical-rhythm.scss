@@ -1,4 +1,4 @@
-/* 
+/*
  * Vertical Rhythm Functions
  * ========================================================================== */
 
@@ -6,12 +6,15 @@
   @if unit($value) != px {
     @error "The normalize vertical-rhythm module only supports px inputs. The typey library is better.";
   }
+
   @if $unit == rem {
     @return ($value / $base-font-size) * 1rem;
   }
+
   @else if $unit == em {
     @return ($value / $relative-to) * 1em;
   }
+
   @else { // $unit == px
     @return $value;
   }
@@ -21,26 +24,32 @@
   @if unit($value) != 'px' {
     @error "vr-font-size() only supports px inputs. The typey library is better.";
   }
+
   font-size: vr($value, $relative-to);
 }
 
 @mixin vr($property, $values, $relative-to: $base-font-size) {
   $value-list: $values;
   $sep: space;
+
   @if type-of($values) == 'list' {
     $sep: list-separator($values);
   }
+
   @else {
     $value-list: append((), $values);
   }
 
   $normalized-values: ();
+
   @each $value in $value-list {
     @if unitless($value) and $value != 0 {
       $value: $value * vr($base-line-height, $relative-to);
     }
+
     $normalized-values: append($normalized-values, $value, $sep);
   }
+
   #{$property}: $normalized-values;
 }
 
@@ -54,9 +63,11 @@
 
 @mixin vr-line-height($font-size, $min-line-padding: 2px) {
   $lines: ceil($font-size / $base-line-height);
+
   // If lines are cramped include some extra leading.
   @if ($lines * $base-line-height - $font-size) < ($min-line-padding * 2) {
     $lines: $lines + 1;
   }
+
   @include vr(line-height, $lines, $font-size);
 }

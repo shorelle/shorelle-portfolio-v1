@@ -1,4 +1,4 @@
-/* 
+/*
  * Component - Post
  * ========================================================================== */
 
@@ -21,10 +21,11 @@ article.post {
     }
 
     h2 {
-      letter-spacing: -.5px;
+      letter-spacing: -0.5px;
 
       @include respond-to('mobile') {
         @include vr-font-size($h3-font-size);
+
         letter-spacing: 0;
       }
 
@@ -40,6 +41,7 @@ article.post {
 
     img {
       @include vr(margin-bottom, $mod-m);
+
       max-width: 100%;
       height: auto;
     }
@@ -55,6 +57,7 @@ article.post {
     @include vr(margin-top, $mod-l);
     @include vr-font-size($h3-font-size);
     @include vr-line-height($h2-font-size);
+
     text-align: center;
     font-family: $heading-font;
 
@@ -73,11 +76,13 @@ article.post {
 
     .previous {
       @include responsive-columns('mobile', 0.33);
+
       text-align: left;
     }
 
     .next {
       @include responsive-columns('mobile', 0.33);
+
       float: right;
       text-align: right;
 
@@ -100,6 +105,7 @@ article.post {
 
     span.title {
       @include vr-font-size($h5-font-size);
+
       color: lighten($darkgrey, 20%);
       letter-spacing: 1px;
       text-transform: uppercase;

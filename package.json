@@ -32,10 +32,12 @@
     "gulp-sass": "^2.3.2",
     "gulp-sass-glob": "^1.0.8",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylelint": "^3.9.0",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.9",
     "run-sequence": "^1.2.2",
+    "stylelint-config-standard": "^16.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^7.0.2"
