@@ -166,7 +166,7 @@ gulp.task('build:jekyll', () => {
  * Deletes the entire _site directory
  */
 gulp.task('clean:jekyll', () => {
-  return del.sync(paths.siteDir);
+  return del.sync([paths.siteDir + '/**/*', '!' + paths.siteDir + '/.git']);
 });
 
 /*
