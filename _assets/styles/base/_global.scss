@@ -16,6 +16,10 @@ i.fa {
   white-space: nowrap;
 }
 
+.inactive {
+  color: lighten($text-color, 30%);
+}
+
 .tablet-only {
   display: none;
 
