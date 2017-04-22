@@ -11,7 +11,7 @@
   }
 
   &.revealed {
-    animation: slide-in 1.6s cubic-bezier(.075,.82,.165,1) forwards;
+    animation: slide-in 1.4s cubic-bezier(.075,.82,.165,1) forwards;
 
     img {
       animation: blur-in 1s ease forwards;

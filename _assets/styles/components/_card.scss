@@ -79,9 +79,9 @@ article.card {
           transition: all .2s ease-in-out;
         }
 
-        @include respond-to('not-mobile') {
-          &:hover:before,
-          &.active:before {
+        &:hover:before,
+        &.active:before {
+          @include respond-to('not-mobile') {
             width: calc(100% + 5em);
           }
         }
@@ -132,10 +132,13 @@ article.card {
           left: 0;
         }
 
-        @include respond-to('not-mobile') {
-          &:hover:before,
-          &.active:before {
-            width: calc(10em);
+        &:hover:before,
+        &.active:before {
+          @include respond-to('not-mobile') {
+            width: 10em;
+          }
+          @include respond-to('desktop') {
+            width: 12em;
           }
         }
       }
