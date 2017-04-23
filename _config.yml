@@ -23,6 +23,9 @@ google_analytics: "UA-97825451-1"
 
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-last-modified-at
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
