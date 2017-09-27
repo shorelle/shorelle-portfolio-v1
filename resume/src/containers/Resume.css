@@ -1,0 +1,119 @@
+@import '../styles/variables.css';
+
+/*---------------- 
+  RESUME 
+ -----------------*/
+.resume {
+  margin: 3vr auto 4vr;
+  max-width: 1300px;
+  text-align: left;
+  width: 80%;
+
+  @media (--tablet-landscape) {
+    max-width: 1000px;
+  }
+
+  @media (--mobile) {
+    margin-bottom: 2vr;
+    margin-top: 5%;
+    width: 90%;
+  }
+
+  /*---------------- 
+    SVG BACKGROUND 
+   -----------------*/
+  & > object {
+    height: auto;
+    left: -5vw;
+    padding-top: 100%;
+    position: absolute;
+    top: -12vr;
+    width: 105vw;
+
+    @media (--mobile) {
+      top: -4vr;
+    }
+  }
+
+  & svg.swirl {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.animate path {
+      animation-duration: 1s;
+      animation-name: offset, fade-in;
+    }
+
+    & path {
+      opacity: 0;
+      stroke: var(--plum);
+      stroke-dasharray: 4000px;
+      stroke-dashoffset: 4000px;
+
+      @media (--mobile) {
+        stroke-dasharray: 1000px;
+        stroke-dashoffset: 1000px;
+      }
+    }
+  }
+
+  /*---------------- 
+    INNER PAGE 
+   -----------------*/
+  & .page {
+    animation: slide 0.5s linear forwards;
+    background: var(--offwhite);
+    margin-bottom: 4vr;
+    padding: 5vr 15vw 1vr;
+    position: relative;
+
+    @media (--tablet-landscape) {
+      margin-bottom: 3vr;
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
+    @media (--tablet-portrait) {
+      padding-top: 4vr;
+    }
+
+    @media (--mobile) {
+      margin-bottom: 2vr;
+      padding-top: 2vr;
+      padding-left: 8vw;
+      padding-right: 8vw;
+    }
+  }
+}
+
+/*---------------- 
+  ANIMATION 
+ -----------------*/
+@keyframes slide {
+  from {
+    opacity: 0.95;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*---------------- 
+  FIREFOX ONLY 
+ -----------------*/
+@-moz-document url-prefix() { 
+  .resume svg.swirl path {
+    stroke-dasharray: 4000 4000;
+    stroke-dashoffset: 4000;
+
+    @media (--mobile) {
+      stroke-dasharray: 1000 1000;
+      stroke-dashoffset: 1000;
+    }
+  }
+}

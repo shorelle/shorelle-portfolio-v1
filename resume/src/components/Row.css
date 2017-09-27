@@ -1,0 +1,54 @@
+@import '../styles/variables.css';
+
+/*---------------- 
+  ROW 
+ -----------------*/
+.row {
+  display: flex;
+  margin-bottom: 1.5vr;
+  position: relative;
+  width: 100%;
+
+  @media (--tablet-portrait) {
+    display: block;
+  }
+
+  & .period {
+    color: var(--grey);
+    display: block;
+    left: -6.5vw;
+    margin-top: 2px;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    width: 5vw;
+
+    @media (--tablet-portrait) {
+      left: 0;
+      position: relative;
+      text-align: left;
+      width: 100%;
+    }
+
+    @media (--mobile) {
+      text-align: center;
+    }
+  }
+
+  & .title {
+    flex: 1;
+    padding-right: 1vw;
+
+    @media (--tablet-portrait) {
+      margin-bottom: 0.5vr;
+    }
+  }
+
+  & .description {
+    width: 60%;
+
+    @media (--tablet-portrait) {
+      width: 100%;
+    }
+  }
+}
