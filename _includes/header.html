@@ -1,14 +1,16 @@
-<header id="top" class="site-header" role="banner">
+<header id="top" class="header" role="banner">
   <div class="container">
-    <div class="content">
-      <a class="site-title" href="/"><img src="/assets/img/shorelle-logo.png" alt="{{ site.title | escape }}"></a>
-      <nav class="site-nav">
-        <ul class="site-menu">
-          <li><a href="/" {% if include.slug == 'home' or include.collection == 'web' %}class="current"{% endif %}>Web</a></li>
-          <li><a href="/design" {% if include.slug == 'design' or include.collection == 'design' %}class="current"{% endif %}>Design</a></li>
-          <li><a href="/illustration" {% if include.slug == 'illustration' or include.collection == 'illustration' %}class="current"{% endif %}>Illustration</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <div class="header__content">
+      <a class="header__title" href="/">
+        {{ site.title | escape }}
+      </a>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__menu__item"><a href="/" {% if include.slug == 'home' or include.collection == 'web' %}class="current"{% endif %}>Web</a></li>
+          <li class="header__menu__item"><a href="/design" {% if include.slug == 'design' or include.collection == 'design' %}class="current"{% endif %}>Design</a></li>
+          <li class="header__menu__item"><a href="/illustration" {% if include.slug == 'illustration' or include.collection == 'illustration' %}class="current"{% endif %}>Illustration</a></li>
+          <li class="header__menu__item"><a href="#about">About</a></li>
+          <li class="header__menu__item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>

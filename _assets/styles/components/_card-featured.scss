@@ -2,42 +2,31 @@
  * Component - Featured Card
  * ========================================================================== */
 
-article.card.featured {
-  @include vr-margin($mod-l 0 $mod-xl);
+.card--featured {
+  @include vr-margin($mod-xl 0);
 
   @include respond-to('mobile') {
     @include vr(margin-bottom, $mod-m);
   }
 
-  @include columns(11);
-  @include responsive-columns('desktop', 10);
+  @include columns(9);
+}
 
-  .intro {
-    @include vr-font-size($h2-font-size);
-    @include vr-line-height($h2-font-size);
+.intro--featured {
+  @include vr-font-size($h2-font-size);
+  @include vr-line-height($h2-font-size);
 
-    margin-bottom: 0;
-    font-family: $heading-font;
-    letter-spacing: -0.5px;
+  margin-bottom: 0;
+  font-family: $heading-font;
+  letter-spacing: -0.5px;
 
-    @include respond-to('mobile') {
-      @include vr-font-size($h3-font-size);
+  @include respond-to('mobile') {
+    @include vr-font-size($h3-font-size);
 
-      letter-spacing: 0;
-    }
+    letter-spacing: 0;
   }
+}
 
-  p.sub-intro {
-    color: $darkgrey;
-  }
-
-  a {
-    color: $text-color;
-    border-bottom: 3px solid $primary-color;
-    text-decoration: none;
-
-    &:hover {
-      border-color: $secondary-color;
-    }
-  }
+.sub-intro--featured {
+  color: $darkgrey;
 }

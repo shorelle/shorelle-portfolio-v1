@@ -2,157 +2,143 @@
  * Component - Footer
  * ========================================================================== */
 
-footer.site-footer {
-  @include vr-margin($mod-l 0 $mod-xl);
-  @include responsive-columns('mobile', 1);
+.footer {
+  @include vr-padding($mod-l 0 $mod-xl);
+  @include responsive-columns('mobile', 1, 0, 0);
 
   @include respond-to('mobile') {
-    @include vr(margin-top, $mod-m);
-  }
-
-  .content {
-    @include columns(12,0,0);
     @include vr(padding-top, 1);
+  }
 
-    position: relative;
-    border-top: 2px solid $text-color;
+  background: $white;
+}
 
-    @include respond-to('mobile') {
-      @include vr-padding($mod-m 0 $mod-xxs);
+.footer__content {
+  @include columns(12,0,0);
+  @include vr(padding-top, 1);
+
+  position: relative;
+
+  @include respond-to('mobile') {
+    @include vr-padding(0 0 $mod-xxs);
+  }
+}
+
+.footer__section {
+  @include columns(12,0,0);
+  @include vr(margin-bottom, $mod-l);
+
+  @include respond-to('mobile') {
+    @include vr(margin-bottom, 1);
+  }
+}
+
+#about {
+  .footer__section__content {
+    @include columns(7, 0.5);
+    @include responsive-columns('desktop', 7.5);
+    @include responsive-columns('tablet-landscape', 9);
+    @include responsive-columns('tablet-portrait', 9);
+  }
+}
+
+#contact {
+  .footer__section__content {
+    @include columns(4.5);
+    @include responsive-columns('desktop', 4);
+    @include responsive-columns('tablet-portrait', 4);
+
+    @include respond-to('tablet-portrait') {
+      float: right;
     }
   }
 
-  .footer-section {
-    @include columns(12,0,0);
-    @include vr(margin-bottom, $mod-l);
+  .footer__section__content--first {
+    @include columns(4.5, 0.5);
+    @include responsive-columns('tablet-landscape', 4.5);
+  }
+}
 
-    header.footer-header {
-      @include columns(2);
-      @include responsive-columns('tablet-landscape', 3);
-      @include responsive-columns('tablet-portrait', 3,0,0);
-      @include responsive-columns('mobile', 1);
+.footer__header {
+  @include columns(1.5);
+  @include responsive-columns('tablet-landscape', 3);
+  @include responsive-columns('tablet-portrait', 3,0,0);
+  @include responsive-columns('mobile', 1);
 
-      height: 130px;
-      text-align: right;
-      text-transform: lowercase;
+  height: 130px;
+  text-align: right;
+  text-transform: lowercase;
 
-      @include respond-to('tablet-landscape') {
-        height: auto;
-      }
-
-      @include respond-to('mobile') {
-        text-align: left;
-      }
-
-      h2 {
-        height: 100%;
-        margin: 0;
-
-        img {
-          height: 100%;
-          width: auto;
-
-          @include respond-to('tablet-landscape') {
-            height: 130px;
-          }
-
-          @include respond-to('mobile') {
-            height: 90px;
-            vertical-align: middle;
-          }
-        }
-      }
-
-      > img {
-        width: 100%;
-        height: auto;
-
-        @include respond-to('mobile') {
-          height: 150px;
-          width: auto;
-          float: right;
-        }
-      }
-    }
-
-    .footer-content {
-      @include vr(margin-top, $mod-xxs);
-
-      @include respond-to('mobile') {
-        margin-top: 0;
-      }
-    }
-
-    &#about {
-      header.footer-header {
-        h2 {
-          @include respond-to('mobile') {
-            line-height: 150px;
-            float: left;
-          }
-        }
-      }
-
-      .footer-content {
-        @include columns(7);
-        @include responsive-columns('desktop', 7.5);
-        @include responsive-columns('tablet-landscape', 9);
-        @include responsive-columns('tablet-portrait', 9);
-      }
-
-      .footer-portrait {
-        @include columns(3);
-        @include responsive-columns('desktop', 2.5);
-
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
-
-    &#contact {
-      .footer-content {
-        @include columns(4.5);
-        @include responsive-columns('desktop', 4);
-        @include responsive-columns('tablet-portrait', 9);
-
-        @include respond-to('tablet-portrait') {
-          float: right;
-        }
-      }
-    }
+  @include respond-to('tablet-landscape') {
+    height: auto;
   }
 
-  ul.social-media-list {
-    padding-left: 0;
+  @include respond-to('mobile') {
+    text-align: left;
+  }
+}
 
-    li {
-      list-style: none;
-    }
+.footer__title {
+  position: relative;
+
+  @include respond-to('mobile') {
+    float: left;
+    margin-bottom: 0;
+  }
+}
+
+.footer__portrait {
+  @include columns(3);
+  @include responsive-columns('desktop', 2.5);
+}
+
+.footer__image {
+  width: 100%;
+  height: auto;
+
+  @include respond-to('mobile') {
+    height: 150px;
+    width: auto;
+    float: right;
+  }
+}
+
+.footer__section__content {
+  @include vr(margin-top, $mod-s);
+
+  @include respond-to('mobile') {
+    margin-top: 0;
+  }
+}
+
+.social-media-list {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+.back-to-top {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  @include respond-to('mobile') {
+    width: 100%;
+    text-align: center;
   }
 
-  .back-to-top {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+  a {
+    font-family: $heading-font;
+    font-size: 0.8em;
+    color: lighten($darkgrey, 10%);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
 
-    @include respond-to('mobile') {
-      width: 100%;
-      text-align: center;
-    }
-
-    a {
-      font-family: $heading-font;
-      font-size: 0.8em;
-      color: lighten($darkgrey, 10%);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-
-      &:hover {
-        color: $darkgrey;
-      }
+    &:hover {
+      color: $darkgrey;
     }
   }
 }

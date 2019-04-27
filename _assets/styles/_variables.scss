@@ -14,7 +14,7 @@ $base-unit: 'em' !default;
 
 // The default font family.
 $base-font: 'Roboto', sans-serif !default;
-$heading-font: 'Archivo Narrow', sans-serif;
+$heading-font: 'Kavivanar', 'Archivo Narrow', sans-serif;
 
 // Modular scale values - default golden ratio
 $mod-xxl:  4.236;
@@ -47,9 +47,14 @@ $normalize-vertical-rhythm: true !default;
 // Colours
 $green: #a0c43c;
 $blue: #22aecc;
+$plum: #900c3f;
 $darkgrey: #4a4a4a;
+$lightgrey: #fbfbfb;
+$white: #fff;
 
 $text-color: #303030;
 $base-color: #eee;
 $primary-color: $green;
-$secondary-color: $blue;
+$secondary-color: $plum;
+
+$bold: 600;

@@ -1,0 +1,161 @@
+/*
+ * Component - Card
+ * ========================================================================== */
+
+.card {
+  position: relative;
+
+  @include columns(12);
+  @include vr(margin-bottom, $mod-xxl);
+
+  @include respond-to('mobile') {
+    @include vr(margin-bottom, $mod-l);
+  }
+
+  &:nth-child(odd) {
+    .card__image-container {
+      float: right;
+    }
+
+    .card__image {
+      box-shadow: 10 10 0 0 $base-color;
+
+      @include respond-to('mobile') {
+        box-shadow: 5px 5px 0 0 $base-color;
+      }
+
+      &:hover,
+      &.active {
+        box-shadow: 10 10 3px 0 $base-color;
+      }
+    }
+
+    .card__content {
+      right: auto;
+      left: 0;
+      float: left;
+
+      @include respond-to('tablet-landscape') {
+        padding-left: 0;
+      }
+    }
+
+    .card__link--text {
+      &::before {
+        right: auto;
+        left: 0;
+      }
+
+      &:hover::before,
+      &.active::before {
+        @include respond-to('not-mobile') {
+          width: 10em;
+        }
+
+        @include respond-to('desktop') {
+          width: 12em;
+        }
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    @include respond-to('tablet-landscape') {
+      .card__content {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.card__image-container {
+  @include columns(7,0,0);
+  @include responsive-columns('tablet-landscape',6.5,0,0);
+  @include responsive-columns('tablet-portrait',6,0,0);
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  box-shadow: -10 10 0 0 $base-color;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+
+  @include respond-to('mobile') {
+    box-shadow: 5px 5px 0 0 $base-color;
+  }
+
+  &:hover,
+  &.active {
+    transform: scale(1.01);
+    box-shadow: -10 10 3px 0 $base-color;
+  }
+}
+
+.card__content {
+  @include columns(5,0,0);
+  @include responsive-columns('tablet-landscape',5.5,0,0);
+  @include responsive-columns('tablet-portrait',6,0,0);
+  @include vr-padding($mod-m);
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+
+  @include respond-to('tablet-portrait') {
+    padding-bottom: 0;
+  }
+
+  @include respond-to('mobile') {
+    position: relative;
+    padding: 0;
+  }
+}
+
+.card__title {
+  letter-spacing: -0.5px;
+
+  @include respond-to('tablet-portrait') {
+    @include vr-font-size($h3-font-size);
+
+    letter-spacing: 0;
+  }
+
+  i {
+    position: absolute;
+    color: $base-color;
+    margin-left: 0.2em;
+  }
+}
+
+.card__link--text {
+  position: relative;
+  color: $text-color;
+  font-weight: normal;
+  text-transform: lowercase;
+  text-decoration: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    bottom: -4px;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: $primary-color;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover::before,
+  &.active::before {
+    @include respond-to('not-mobile') {
+      width: calc(100% + 5em);
+    }
+  }
+}
+
+.card__excerpt {
+  color: $darkgrey;
+}

@@ -5,6 +5,7 @@ _site
 node_modules
 assets
 storage
+yarn.lock
 
 # Resume files
 resume/coverage

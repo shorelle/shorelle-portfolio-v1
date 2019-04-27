@@ -2,59 +2,62 @@
  * Component - Header
  * ========================================================================== */
 
-header.site-header {
-  @include vr(margin-top, $mod-s);
+.header {
+  @include vr(padding-top, $mod-m);
 
-  font-family: $heading-font;
+  background: $white;
+  font-family: $base-font;
   text-transform: lowercase;
-
-  @include respond-to('mobile') {
-    @include vr(margin-top, $mod-xxs);
-  }
 
   a {
     color: $text-color;
     text-decoration: none;
 
     &:hover {
-      color: $blue;
+      color: $secondary-color;
     }
   }
+}
 
-  .content {
-    @include columns(12,0,0);
+.header__content {
+  @include columns(12,0,0);
 
-    @include respond-to('tablet-portrait') {
-      padding-bottom: 0;
-    }
-
-    @include respond-to('mobile') {
-      @include vr(padding-bottom, $mod-xs);
-    }
+  @include respond-to('tablet-portrait') {
+    padding-bottom: 0;
   }
 
-  .site-title {
-    @include columns(2,0,0);
-    @include responsive-columns('tablet-landscape',2.5,0,0);
-    @include responsive-columns('tablet-portrait',3.2,0,0);
-    @include responsive-columns('mobile',0.25,0.02,0);
-
-    img {
-      width: 100%;
-      height: auto;
-    }
+  @include respond-to('mobile') {
+    @include vr(padding-bottom, $mod-xs);
   }
+}
 
-  .site-nav {
-    @include columns(10,0,0);
-    @include responsive-columns('tablet-landscape',9.5,0,0);
-    @include responsive-columns('tablet-portrait',8.8,0,0);
-    @include responsive-columns('mobile',0.69,0,0);
+.header__title {
+  @include columns(1.5);
+  @include responsive-columns('tablet-landscape',2.5);
+  @include responsive-columns('tablet-portrait',3.2);
+  @include responsive-columns('mobile',0.25,0.02);
+  @include vr-font-size($h3-font-size);
+  @include vr-line-height($h3-font-size);
 
-    text-align: right;
+  position: relative;
+  font-family: $heading-font;
+  font-weight: normal;
 
-    .menu-icon {
-      display: none;
-    }
+  @include respond-to('mobile') {
+    @include vr-font-size($h4-font-size);
+    @include vr-line-height($h4-font-size);
+  }
+}
+
+.header__nav {
+  @include columns(10.5);
+  @include responsive-columns('tablet-landscape',9.5);
+  @include responsive-columns('tablet-portrait',8.8);
+  @include responsive-columns('mobile',0.69);
+
+  text-align: right;
+
+  .menu-icon {
+    display: none;
   }
 }

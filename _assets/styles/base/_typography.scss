@@ -8,10 +8,16 @@ body {
 
 a {
   color: $primary-color;
-  font-weight: normal;
+  font-weight: $bold;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 
   &:hover {
     color: $secondary-color;
+  }
+
+  &:active {
+    color: darken($secondary-color, 5%);
   }
 }
 

@@ -2,124 +2,131 @@
  * Component - Post
  * ========================================================================== */
 
-article.post {
+.post {
   @include clearfloat();
   @include vr-margin($mod-l 0 $mod-xl);
 
   @include respond-to('tablet-landscape') {
     @include vr(margin-bottom, $mod-l);
   }
+}
 
-  header.post-header {
-    @include vr(margin-bottom, $mod-l);
-    @include columns(12,0,0);
-    @include responsive-columns('mobile', 1);
+.post__header {
+  @include vr(margin-bottom, $mod-l);
+  @include columns(12,0,0);
+  @include responsive-columns('mobile', 1);
 
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    h2 {
-      letter-spacing: -0.5px;
-
-      @include respond-to('mobile') {
-        @include vr-font-size($h3-font-size);
-
-        letter-spacing: 0;
-      }
-
-      b {
-        border-bottom: 4px solid $base-color;
-      }
-    }
+  img {
+    width: 100%;
+    height: auto;
   }
+}
 
-  .post-images {
-    @include columns(6,0,0);
-    @include responsive-columns('mobile', 1);
+.post__title {
+  letter-spacing: -0.5px;
 
-    img {
-      @include vr(margin-bottom, $mod-m);
-
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  .post-content {
-    @include columns(5,0.5);
-    @include responsive-columns('tablet-portrait', 5.8, 0.2);
-  }
-
-  footer.post-footer {
-    @include columns(12,0,0);
-    @include vr(margin-top, $mod-l);
+  @include respond-to('mobile') {
     @include vr-font-size($h3-font-size);
-    @include vr-line-height($h2-font-size);
 
-    text-align: center;
-    font-family: $heading-font;
+    letter-spacing: 0;
+  }
+
+  b {
+    border-bottom: 4px solid $base-color;
+  }
+}
+
+.post__images {
+  @include columns(6,0,0);
+  @include responsive-columns('mobile', 1);
+
+  img {
+    @include vr(margin-bottom, $mod-m);
+
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.post__content {
+  @include columns(5,0.5);
+  @include responsive-columns('tablet-portrait', 5.8, 0.2);
+}
+
+.post__footer {
+  @include columns(12,0,0);
+  @include vr(margin-top, $mod-l);
+  @include vr-font-size($h3-font-size);
+  @include vr-line-height($h4-font-size);
+
+  text-align: center;
+  font-family: $heading-font;
+
+  @include respond-to('tablet-landscape') {
+    @include vr-font-size($h4-font-size);
+    @include vr(margin-top, $mod-m);
+  }
+
+  div {
+    @include columns(4,0,0);
 
     @include respond-to('mobile') {
-      @include vr-font-size($h4-font-size);
-      @include vr(margin-top, $mod-m);
+      @include vr(margin-bottom, $mod-s);
     }
+  }
 
-    div {
-      @include columns(4,0,0);
+  .previous {
+    @include responsive-columns('mobile', 0.33);
 
-      @include respond-to('mobile') {
-        @include vr(margin-bottom, $mod-s);
-      }
-    }
+    text-align: left;
+  }
 
-    .previous {
-      @include responsive-columns('mobile', 0.33);
+  .next {
+    @include responsive-columns('mobile', 0.33);
 
-      text-align: left;
-    }
+    float: right;
+    text-align: right;
 
-    .next {
-      @include responsive-columns('mobile', 0.33);
-
+    @include respond-to('mobile') {
       float: right;
-      text-align: right;
-
-      @include respond-to('mobile') {
-        float: right;
-      }
     }
+  }
 
-    .collection {
-      @include responsive-columns('mobile', 0.34);
-    }
+  .collection {
+    @include responsive-columns('mobile', 0.34);
+  }
 
-    span.inactive {
-      color: darken($base-color, 20%);
-    }
+  .inactive {
+    color: darken($base-color, 20%);
+  }
 
-    span.label {
-      font-weight: normal;
-    }
+  .label {
+    font-weight: normal;
+  }
 
-    span.title {
+  .title {
+    color: lighten($darkgrey, 20%);
+    font-family: $base-font;
+    font-size: 0.5em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @include respond-to('tablet-landscape') {
       @include vr-font-size($h5-font-size);
+    }
+  }
 
-      color: lighten($darkgrey, 20%);
-      letter-spacing: 1px;
-      text-transform: uppercase;
+  a {
+    color: $text-color;
+    text-decoration: none;
+
+    span {
+      transition: all 90ms ease-in-out;
     }
 
-    a {
-      color: $text-color;
-      text-decoration: none;
-      span { transition: all 90ms ease-in-out; }
-
-      &:hover {
-        span.label { color: $primary-color; }
-        span.title { color: lighten($darkgrey, 30%); }
-      }
+    &:hover {
+      span.label { color: $primary-color; }
+      span.title { color: lighten($darkgrey, 30%); }
     }
   }
 }

@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: $lightgrey;
+}
+
 .container {
   @include container();
 }
@@ -15,6 +19,7 @@ span.label {
 }
 
 i.fa {
+  color: $darkgrey;
   display: inline-block;
   min-width: 17px;
   margin-right: 0.5em;

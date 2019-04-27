@@ -2,20 +2,20 @@
 layout: default
 ---
 
-<article class="card featured">
-  <h1 class="intro">Design</h1>
-  <p class="sub-intro">{{ page.content }}</p>
+<article class="card card--featured">
+  <h1 class="intro intro--featured">Design</h1>
+  <p class="sub-intro sub-intro--featured">{{ page.content }}</p>
 </article>
 
 {% assign sorted = site.design | sort:"order" %}
 {% for post in sorted %}
   <article class="card revealer">
-    <div class="card-image">
-      <a href="{{ post.url }}" class="card-link"><img src="/assets/img/design/{{ post.slug }}-thumbnail.jpg" alt="{{ post.title }} thumbnail"></a>
+    <div class="card__image-container">
+      <a href="{{ post.url }}" class="card__link"><img class="card__image" src="/assets/img/design/{{ post.slug }}-thumbnail.jpg" alt="{{ post.title }} thumbnail"></a>
     </div>
-    <div class="card-content">
-      <h2><a href="{{ post.url }}" class="card-link {{ post.slug }}">{{ post.title }}</a></h2>
-      <div class="excerpt">{{ post.excerpt }}</div>
+    <div class="card__content">
+      <h2 class="card__title"><a href="{{ post.url }}" class="card__link card__link--text {{ post.slug }}">{{ post.title }}</a></h2>
+      <div class="card__excerpt">{{ post.excerpt }}</div>
     </div>
   </article>
 {% endfor %}

@@ -3,19 +3,19 @@ layout: default
 ---
 
 <article class="post">
-  <header class="post-header revealer">
+  <header class="post__header revealer">
     <img src="/assets/img/design/{{ page.slug }}-feature.jpg" alt=""></a>
-    <h2>{{ page.excerpt }}</h2>
+    <h2 class="post__title">{{ page.excerpt }}</h2>
   </header>
-  <div class="post-images">
+  <div class="post__images">
     {% for image in page.images %}
       <img src="/assets/img/design/{{ image.path }}" alt="{{ image.title }}">
     {% endfor %}
   </div>
-  <div class="post-content">
+  <div class="post__content">
     {{ page.content | remove: page.excerpt }}
   </div>
-  <footer class="post-footer">
+  <footer class="post__footer">
     <div class="previous">
     {% if page.previous != nil %}
       <a href="{{ page.previous.url }}"><span class="label">&larr; previous</span><br><span class="title">{{ page.previous.title }}</span></a>

@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<article class="card featured">
-  <h1 class="intro">Illustration</h1>
-  <p class="sub-intro">{{ page.content }}</p>
+<article class="card card--featured">
+  <h1 class="intro intro--featured">Illustration</h1>
+  <p class="sub-intro sub-intro--featured">{{ page.content }}</p>
 </article>
 
 {% assign sorted = site.illustration | sort:"order" %}
 {% for post in sorted %}
-  <article class="card illustration revealer {{ post.orientation }}">
-    <img src="/assets/img/illustration/feature-{{ post.slug }}.jpg" alt="{{ post.title }}">
+  <article class="card card--illustration card--{{ post.orientation }} revealer">
+    <img class="card__image card__image--illustration card__image--{{ post.orientation }}" src="/assets/img/illustration/feature-{{ post.slug }}.jpg" alt="{{ post.title }}">
   </article>
 {% endfor %}

@@ -2,20 +2,30 @@
 layout: default
 ---
 
-<article class="card featured">
-  <p class="intro">{{ page.excerpt }}</p>
-  <p class="sub-intro"><a href="#contact">Say hello</a>, or check out some of my personal projects and experiments.</p>
+<article class="card card--featured">
+  <p class="intro intro--featured">
+    {{ page.excerpt }}
+  </p>
+  <p class="sub-intro sub-intro--featured">
+    <a href="#contact">Say hello</a>, or check out some of my personal projects and experiments.
+  </p>
 </article>
 
 {% assign sorted = site.web | sort:"order" %}
 {% for post in sorted %}
   <article class="card revealer">
-    <div class="card-image">
-      <a href="{{ post.link }}" class="card-link"><img src="/assets/img/web/{{ post.slug }}-feature.jpg" alt="{{ post.title }} thumbnail"></a>
+    <div class="card__image-container">
+      <a href="{{ post.link }}" class="card__link">
+        <img class="card__image" src="/assets/img/web/{{ post.slug }}-feature.jpg" alt="{{ post.title }} thumbnail">
+      </a>
     </div>
-    <div class="card-content">
-      <h2><a href="{{ post.link }}" class="card-link {{ post.slug }}">{{ post.title }}</a></h2>
-      <div class="excerpt">{{ post.excerpt }}</div>
+    <div class="card__content">
+      <h2 class="card__title">
+        <a href="{{ post.link }}" class="card__link card__link--text {{ post.slug }}">{{ post.title }}</a>
+      </h2>
+      <div class="card__excerpt">
+        {{ post.excerpt }}
+      </div>
     </div>
   </article>
 {% endfor %}

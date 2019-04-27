@@ -25,7 +25,7 @@ const Theme = {
    */
   cardHover: function() {
 
-    let links = document.getElementsByClassName('card-link');
+    let links = document.getElementsByClassName('card__link');
 
     for (let i = 0; i < links.length; ++i) {
       let cards = Util.getParents(links[i], '.card');

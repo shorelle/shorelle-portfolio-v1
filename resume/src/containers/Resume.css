@@ -27,12 +27,8 @@
     left: -5vw;
     padding-top: 100%;
     position: absolute;
-    top: -12vr;
+    top: -25vw;
     width: 105vw;
-
-    @media (--mobile) {
-      top: -4vr;
-    }
   }
 
   & svg.swirl {

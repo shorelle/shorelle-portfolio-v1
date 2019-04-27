@@ -2,65 +2,65 @@
  * Component - Menu
  * ========================================================================== */
 
-ul.site-menu {
-  @include vr-font-size($h3-font-size);
-  @include vr-line-height($h3-font-size);
-  @include vr(margin-top, $mod-m);
+.header__menu {
+  @include vr-font-size($h4-font-size);
+  @include vr-line-height($h4-font-size);
 
-  border-bottom: 2px solid $text-color;
-  padding-left: 0;
-
-  @include respond-to('tablet-landscape') {
-    @include vr(margin-top, $mod-s);
+  @include respond-to('mobile') {
+    margin-top: 0;
   }
 
+  padding-left: 0;
+}
+
+.header__menu__item {
+  position: relative;
+  display: inline;
+  list-style: none;
+
   @include respond-to('tablet-portrait') {
-    @include vr(margin-top, $mod-m);
+    font-size: 0.9em;
+    line-height: 0.9;
   }
 
   @include respond-to('mobile') {
-    @include vr-font-size($h4-font-size);
+    font-size: 0.8em;
+    line-height: 0.8;
   }
 
-  li {
-    position: relative;
-    display: inline;
-    list-style: none;
+  &::after {
+    content: '|';
 
-    @include respond-to('tablet-portrait') {
-      font-size: 0.9em;
-      line-height: 0.9;
+    @include vr-margin(0 $mod-xs);
+  }
+
+  &:nth-last-child(2)::after {
+    @include respond-to('mobile') {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    @include respond-to('mobile') {
+      display: none;
     }
 
     &::after {
-      content: '|';
+      display: none;
+    }
+  }
 
-      @include vr-margin(0 $mod-xs);
+  a {
+    display: inline-block;
+    font-weight: normal;
+    margin-left: -5px; // Compensate for inline-block gap
+
+    &:hover {
+      color: $primary-color;
     }
 
-    &:nth-last-child(2)::after {
-      @include respond-to('mobile') {
-        display: none;
-      }
-    }
-
-    &:last-child {
-      @include respond-to('mobile') {
-        display: none;
-      }
-
-      &::after {
-        display: none;
-      }
-    }
-
-    a {
-      display: inline-block;
-      margin-left: -8px; // Compensate for inline-block gap
-
-      &.current {
-        color: $primary-color;
-      }
+    &.current {
+      color: $secondary-color;
     }
   }
 }
