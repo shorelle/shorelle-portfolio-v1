@@ -1,0 +1,34 @@
+/*
+ * Component - Card
+ * ========================================================================== */
+
+.card {
+  position: relative;
+
+  @include vr(margin-bottom, $mod-xl);
+}
+
+.card__title {
+  @include vr-font-size($h3-font-size);
+
+  @include respond-to('mobile') {
+    @include vr-font-size($h4-font-size);
+  }
+}
+
+.card__link {
+  background: none;
+}
+
+.card__image {
+  max-width: 100%;
+}
+
+.card__excerpt {
+  color: $darkgrey;
+}
+
+.card--double {
+  width: $column-width / 2;
+  float: left;
+}

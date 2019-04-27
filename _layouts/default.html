@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {% include head.html %}
-  <body>
-    {% assign page_slug = page.title | downcase %}
+  <body id="top">
+    {% assign page_slug = page.title | slugify %}
     {% assign page_collection = page.collection %}
     {% include header.html slug=page_slug collection=page_collection %}
     {% include browser-upgrade.html %}
     <main class="page-content">
-      <div class="container">
-        {{ content }}
-      </div>
+      {{ content }}
     </main>
-    {% include footer.html %}
     {% include scripts.html %}
   </body>
 </html>

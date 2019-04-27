@@ -13,8 +13,8 @@ $base-line-height: 27px !default;
 $base-unit: 'em' !default;
 
 // The default font family.
-$base-font: 'Roboto', sans-serif !default;
-$heading-font: 'Kavivanar', 'Archivo Narrow', sans-serif;
+$base-font: 'Crimson Text', serif !default;
+$heading-font: 'Inconsolata', sans-serif;
 
 // Modular scale values - default golden ratio
 $mod-xxl:  4.236;
@@ -34,8 +34,15 @@ $h4-font-size: $mod-m   * $base-font-size !default;
 $h5-font-size: $mod-s   * $base-font-size !default;
 $h6-font-size: $mod-xs  * $base-font-size !default;
 
+// Spacing unit.
+$unit: 8px !default;
+
 // The amount lists and blockquotes are indented.
 $indent-amount: 40px !default;
+
+// Default width
+$column-width: 540px;
+$tablet-column-width: 460px;
 
 // The following variable controls whether normalize-scss will output
 // font-sizes, line-heights and block-level top/bottom margins that form a basic
@@ -48,6 +55,7 @@ $normalize-vertical-rhythm: true !default;
 $green: #a0c43c;
 $blue: #22aecc;
 $plum: #900c3f;
+$black: #111;
 $darkgrey: #4a4a4a;
 $lightgrey: #fbfbfb;
 $white: #fff;
@@ -57,4 +65,5 @@ $base-color: #eee;
 $primary-color: $green;
 $secondary-color: $plum;
 
+$normal: 400;
 $bold: 600;

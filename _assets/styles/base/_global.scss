@@ -10,8 +10,20 @@ body {
   background: $lightgrey;
 }
 
-.container {
-  @include container();
+.page-content {
+  margin-left: $unit * 44;
+  width: $column-width;
+
+  @include respond-to('tablet-landscape') {
+    margin-left: $unit * 30;
+    width: $tablet-column-width;
+  }
+
+  @include respond-to('mobile') {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 span.label {
@@ -19,10 +31,8 @@ span.label {
 }
 
 i.fa {
-  color: $darkgrey;
   display: inline-block;
-  min-width: 17px;
-  margin-right: 0.5em;
+  margin: 0 0.25em;
 }
 
 .no-wrap {
@@ -33,10 +43,21 @@ i.fa {
   color: lighten($text-color, 30%);
 }
 
+.hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
 .tablet-only {
   display: none;
 
-  @include respond-to('tablet-landscape') {
+  @include respond-to('tablet-portrait') {
     display: block;
   }
 }
@@ -44,7 +65,7 @@ i.fa {
 .desktop-only {
   display: block;
 
-  @include respond-to('tablet-landscape') {
+  @include respond-to('mobile') {
     display: none !important;
   }
 }

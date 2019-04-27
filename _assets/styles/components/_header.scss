@@ -3,11 +3,12 @@
  * ========================================================================== */
 
 .header {
-  @include vr(padding-top, $mod-m);
-
-  background: $white;
-  font-family: $base-font;
-  text-transform: lowercase;
+  position: fixed;
+  height: 100%;
+  width: $unit * 24;
+  margin-left: $unit * 6;
+  margin-right: $unit * 6;
+  font-family: $heading-font;
 
   a {
     color: $text-color;
@@ -17,47 +18,71 @@
       color: $secondary-color;
     }
   }
-}
 
-.header__content {
-  @include columns(12,0,0);
-
-  @include respond-to('tablet-portrait') {
-    padding-bottom: 0;
+  @include respond-to('tablet-landscape') {
+    margin-left: $unit * 2;
+    margin-right: $unit * 2;
   }
 
   @include respond-to('mobile') {
-    @include vr(padding-bottom, $mod-xs);
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
 .header__title {
-  @include columns(1.5);
-  @include responsive-columns('tablet-landscape',2.5);
-  @include responsive-columns('tablet-portrait',3.2);
-  @include responsive-columns('mobile',0.25,0.02);
   @include vr-font-size($h3-font-size);
   @include vr-line-height($h3-font-size);
 
   position: relative;
   font-family: $heading-font;
   font-weight: normal;
+  text-transform: lowercase;
+}
+
+.header__subtitle {
+  @include vr-font-size($base-font-size);
+  @include vr-line-height($base-font-size);
+
+  font-family: $base-font;
 
   @include respond-to('mobile') {
-    @include vr-font-size($h4-font-size);
-    @include vr-line-height($h4-font-size);
+    display: none;
   }
 }
 
 .header__nav {
-  @include columns(10.5);
-  @include responsive-columns('tablet-landscape',9.5);
-  @include responsive-columns('tablet-portrait',8.8);
-  @include responsive-columns('mobile',0.69);
-
-  text-align: right;
-
   .menu-icon {
     display: none;
   }
+}
+
+.header__portrait {
+  text-align: center;
+}
+
+.header__image {
+  width: $unit * 20;
+  height: auto;
+}
+
+.social-media-list {
+  margin: 0;
+  padding-left: 0;
+  text-align: center;
+
+  @include respond-to('mobile') {
+    text-align: left;
+  }
+}
+
+.social__item {
+  display: inline;
+  list-style: none;
+}
+
+.social__link {
+  background: none;
 }

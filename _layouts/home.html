@@ -2,30 +2,9 @@
 layout: default
 ---
 
-<article class="card card--featured">
-  <p class="intro intro--featured">
-    {{ page.excerpt }}
-  </p>
-  <p class="sub-intro sub-intro--featured">
-    <a href="#contact">Say hello</a>, or check out some of my personal projects and experiments.
-  </p>
+<article class="article home">
+  <header class="intro">
+    <h1 class="intro__title">{{ page.excerpt }}</h1>
+    <p class="intro__subtitle">Watch this space - a portfolio will probably emerge.</p>
+  </header>
 </article>
-
-{% assign sorted = site.web | sort:"order" %}
-{% for post in sorted %}
-  <article class="card revealer">
-    <div class="card__image-container">
-      <a href="{{ post.link }}" class="card__link">
-        <img class="card__image" src="/assets/img/web/{{ post.slug }}-feature.jpg" alt="{{ post.title }} thumbnail">
-      </a>
-    </div>
-    <div class="card__content">
-      <h2 class="card__title">
-        <a href="{{ post.link }}" class="card__link card__link--text {{ post.slug }}">{{ post.title }}</a>
-      </h2>
-      <div class="card__excerpt">
-        {{ post.excerpt }}
-      </div>
-    </div>
-  </article>
-{% endfor %}

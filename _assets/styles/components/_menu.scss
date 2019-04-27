@@ -7,7 +7,7 @@
   @include vr-line-height($h4-font-size);
 
   @include respond-to('mobile') {
-    margin-top: 0;
+    @include vr-margin(0 0 $mod-xxs);
   }
 
   padding-left: 0;
@@ -15,52 +15,39 @@
 
 .header__menu__item {
   position: relative;
-  display: inline;
   list-style: none;
 
-  @include respond-to('tablet-portrait') {
-    font-size: 0.9em;
-    line-height: 0.9;
-  }
-
   @include respond-to('mobile') {
-    font-size: 0.8em;
-    line-height: 0.8;
-  }
-
-  &::after {
-    content: '|';
-
-    @include vr-margin(0 $mod-xs);
-  }
-
-  &:nth-last-child(2)::after {
-    @include respond-to('mobile') {
-      display: none;
-    }
-  }
-
-  &:last-child {
-    @include respond-to('mobile') {
-      display: none;
-    }
+    display: inline;
 
     &::after {
+      content: '|';
+      margin-left: $unit;
+    }
+
+    &:last-child::after {
       display: none;
     }
   }
+}
 
-  a {
-    display: inline-block;
-    font-weight: normal;
-    margin-left: -5px; // Compensate for inline-block gap
+.header__menu__link {
+  position: relative;
+  background: none;
+  text-shadow: none;
 
-    &:hover {
-      color: $primary-color;
-    }
+  &.current::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -2px;
+    left: -4px;
+    height: 70%;
+    width: 100%;
+    background: darken($lightgrey, 10%);
+  }
 
-    &.current {
-      color: $secondary-color;
-    }
+  &:hover {
+    background: none;
   }
 }

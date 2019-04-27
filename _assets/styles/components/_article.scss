@@ -1,32 +1,35 @@
 /*
- * Component - Featured Card
+ * Component - Article
  * ========================================================================== */
 
-.card--featured {
+.article {
   @include vr-margin($mod-xl 0);
 
   @include respond-to('mobile') {
-    @include vr(margin-bottom, $mod-m);
+    @include vr-margin($mod-l 0);
   }
-
-  @include columns(9);
 }
 
-.intro--featured {
+.intro {
+  @include vr(margin-bottom, $mod-l);
+
+  @include respond-to('mobile') {
+    @include vr(margin-bottom, $mod-s);
+  }
+}
+
+.intro__title {
   @include vr-font-size($h2-font-size);
   @include vr-line-height($h2-font-size);
 
   margin-bottom: 0;
   font-family: $heading-font;
-  letter-spacing: -0.5px;
 
   @include respond-to('mobile') {
     @include vr-font-size($h3-font-size);
-
-    letter-spacing: 0;
   }
 }
 
-.sub-intro--featured {
+.intro__subtitle {
   color: $darkgrey;
 }

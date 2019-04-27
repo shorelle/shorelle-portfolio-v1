@@ -39,9 +39,6 @@ collections:
   illustration:
     output: false
     permalink: /:collection/:path/
-  design:
-    output: true
-    permalink: /:collection/:path/
   web:
     output: false
     permalink: /:collection/:path/

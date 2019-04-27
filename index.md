@@ -4,5 +4,5 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: Home
-excerpt: Hello! I'm Desiree, a web developer, designer and illustrator based in Sydney.
+excerpt: Hello! I'm Desiree&mdash;<br>a web developer, designer and illustrator based in Sydney.
 ---
