@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /about/
-excerpt: The portfolio of Desiree Surjadi. I enjoy interpreting stories and am inspired by graphic novels and animation from around the world.
+excerpt: Hello! I'm Desiree&mdash;<br>a web developer, designer and illustrator based in Sydney.
 ---
 
 <p>Hello! I'm Desiree, a webdesigner/developer and illustrator from Sydney, currently making things at <a href="https://www.canva.com" target="_blank">Canva</a> <i class="fa fa-heart-o" aria-hidden="true"></i></p>
