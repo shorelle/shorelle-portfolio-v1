@@ -8,6 +8,23 @@
 
 body {
   background: $lightgrey;
+
+  &.body--home::before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    right: -5%;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.8;
+    background: url('../img/background.jpg') no-repeat top right;
+    background-size: cover;
+
+    @include respond-to('tablet-landscape') {
+      display: none;
+    }
+  }
 }
 
 .page-content {

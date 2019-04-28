@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {% include head.html %}
-  <body id="top">
-    {% assign page_slug = page.title | slugify %}
-    {% assign page_collection = page.collection %}
+  {% assign page_slug = page.title | slugify %}
+  {% assign page_collection = page.collection %}
+  <body id="top" class="body--{{ page_slug }}">
     {% include header.html slug=page_slug collection=page_collection %}
     {% include browser-upgrade.html %}
     <main class="page-content">
