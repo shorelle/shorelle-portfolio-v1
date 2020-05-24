@@ -2,7 +2,6 @@
  * Module - Theme
  * ========================================================================== */
 
-import Util from './util';
 import Scroll from './scroll'
 
 const Theme = {
