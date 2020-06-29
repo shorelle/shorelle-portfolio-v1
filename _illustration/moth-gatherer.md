@@ -1,5 +1,5 @@
 ---
 layout: page
-title: The Pin, from Brick
+title: The Moth Gatherer
 orientation: portrait
 ---

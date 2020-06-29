@@ -39,6 +39,18 @@ collections:
   illustration:
     output: false
     permalink: /:collection/:path/
+    order:
+      - moth-gatherer.md
+      - thought-memory.md
+      - azula-dragon.md
+      - asmodean-cello.md
+      - skull-jacaranda.md
+      - skull-cults.md
+      - credence.md
+      - brick-pin.md
+      - wicked-glinda.md
+      - wicked-elphaba.md
+      - willow-suspension.md
   web:
     output: false
     permalink: /:collection/:path/

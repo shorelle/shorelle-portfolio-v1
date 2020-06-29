@@ -14,7 +14,7 @@ $base-unit: 'em' !default;
 
 // The default font family.
 $base-font: 'Crimson Text', serif !default;
-$heading-font: 'Inconsolata', sans-serif;
+$heading-font: 'Special Elite', sans-serif;
 
 // Modular scale values - default golden ratio
 $mod-xxl:  4.236;
@@ -41,8 +41,8 @@ $unit: 8px !default;
 $indent-amount: 40px !default;
 
 // Default width
-$column-width: 540px;
-$tablet-column-width: 460px;
+$column-width: 800px;
+$tablet-column-width: 640px;
 
 // The following variable controls whether normalize-scss will output
 // font-sizes, line-heights and block-level top/bottom margins that form a basic
@@ -62,8 +62,8 @@ $white: #fff;
 
 $text-color: #303030;
 $base-color: #eee;
-$primary-color: $green;
-$secondary-color: $plum;
+$primary-color: $plum;
+$secondary-color: $green;
 
 $normal: 400;
 $bold: 600;

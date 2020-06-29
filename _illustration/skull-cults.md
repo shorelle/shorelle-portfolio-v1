@@ -1,5 +1,5 @@
 ---
 layout: page
-title: Glinda, from Wicked
+title: Not like other cults
 orientation: double
 ---

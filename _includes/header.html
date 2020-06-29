@@ -3,23 +3,13 @@
     <a class="header__title" href="/">
       {{ site.title | escape }}
     </a>
-    <div class="header__subtitle">Desiree Surjadi - <br>making images & words</div>
-    <nav class="header__nav">
-      <ul class="header__menu">
-        <li class="header__menu__item"><a class="header__menu__link{% if include.slug == 'illustration' or include.collection == 'illustration' %} current{% endif %}" href="/illustration">Illustration</a></li>
-        <li class="header__menu__item"><a class="header__menu__link{% if include.slug == 'web-projects' or include.collection == 'web' %} current{% endif %}" href="/web">Web things</a></li>
-        <li class="header__menu__item"><a class="header__menu__link{% if include.slug == 'about' %} current{% endif %}" href="/about">About</a></li>
-      </ul>
-    </nav>
-    <div class="header__portrait desktop-only">
-      <img src="/assets/img/shorelle-portrait.jpg" class="header__image" alt="A portrait of Des in her natural habitat">
-    </div>
-    <ul class="social-media-list">
-      <li class="social__item"><a class="social__link" href="https://instagram.com/shorelledraws" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i><span class="hidden">Instagram</span></a></li>
-      <li class="social__item"><a class="social__link" href="https://twitter.com/shorelle" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span></a></li>
-      <li class="social__item"><a class="social__link" href="https://shorelle.tumblr.com" target="_blank"><i class="fa fa-tumblr-square" aria-hidden="true"></i> <span class="hidden">Tumblr</span></a></li>
-      <li class="social__item"><a class="social__link" href="http://github.com/shorelle" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i><span class="hidden">Github</span></a></li>
-      <li class="social__item"><a class="social__link" href="http://codepen.io/shorelle" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i><span class="hidden">Codepen</span></a></li>
-    </ul>
+    <div class="header__subtitle">ce n’est pas un portfolio</div>
   </div>
+  <nav class="header__nav">
+    <ul class="header__menu">
+      <li class="header__menu__item"><a class="header__menu__link{% if include.slug == 'home' or include.collection == 'illustration' %} current{% endif %}" href="/">Illustration</a></li>
+      <li class="header__menu__item"><a class="header__menu__link{% if include.slug == 'web' or include.collection == 'web' %} current{% endif %}" href="/web">Web things</a></li>
+      <li class="header__menu__item"><a class="header__menu__link{% if include.slug == 'about' %} current{% endif %}" href="/about">About</a></li>
+    </ul>
+  </nav>
 </header>

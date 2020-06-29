@@ -4,6 +4,12 @@ layout: default
 
 <article class="article home">
   <header class="intro">
-    <h1 class="intro__title">{{ page.excerpt }}</h1>
+    <p class="intro__title home">{{ page.excerpt }}</p>
   </header>
+
+  {% for post in site.illustration %}
+    <div class="card card--{{ post.orientation }}">
+      <img class="card__image card__image--{{ post.orientation }}" src="/assets/img/illustration/feature-{{ post.slug }}.jpg" alt="{{ post.title }}">
+    </div>
+  {% endfor %}
 </article>

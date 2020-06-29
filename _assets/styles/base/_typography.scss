@@ -24,13 +24,13 @@ a {
   }
 
   &:hover {
-    color: $secondary-color;
-    background-image: -webkit-linear-gradient($lightgrey, $lightgrey), -webkit-linear-gradient($lightgrey, $lightgrey), -webkit-linear-gradient($secondary-color, $secondary-color);
-    background-image: linear-gradient($lightgrey, $lightgrey), linear-gradient($lightgrey, $lightgrey), linear-gradient($secondary-color, $secondary-color);
+    color: $primary-color;
+    background-image: -webkit-linear-gradient($lightgrey, $lightgrey), -webkit-linear-gradient($lightgrey, $lightgrey), -webkit-linear-gradient($primary-color, $primary-color);
+    background-image: linear-gradient($lightgrey, $lightgrey), linear-gradient($lightgrey, $lightgrey), linear-gradient($primary-color, $primary-color);
   }
 
   &:active {
-    color: darken($secondary-color, 5%);
+    color: darken($primary-color, 5%);
   }
 
   &::selection,

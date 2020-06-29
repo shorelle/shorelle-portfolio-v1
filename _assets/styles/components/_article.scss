@@ -4,29 +4,36 @@
 
 .article {
   @include vr-margin($mod-xl 0);
+  @include clearfix();
 
   @include respond-to('mobile') {
-    @include vr-margin($mod-l 0);
+    @include vr-margin($mod-m 0);
   }
 }
 
 .intro {
-  @include vr(margin-bottom, $mod-l);
+  @include vr(margin-bottom, $mod-xl);
 
   @include respond-to('mobile') {
-    @include vr(margin-bottom, $mod-s);
+    @include vr(margin-bottom, $mod-m);
   }
 }
 
 .intro__title {
-  @include vr-font-size($h2-font-size);
-  @include vr-line-height($h2-font-size);
+  @include vr-font-size($h3-font-size);
+  @include vr-line-height($base-font-size);
 
   margin-bottom: 0;
   font-family: $heading-font;
 
   @include respond-to('mobile') {
-    @include vr-font-size($h3-font-size);
+    @include vr-font-size($h4-font-size);
+  }
+
+  &.home {
+    font-family: $base-font;
+    font-style: italic;
+    color: $darkgrey;
   }
 }
 

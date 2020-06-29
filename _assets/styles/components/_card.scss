@@ -3,9 +3,18 @@
  * ========================================================================== */
 
 .card {
-  position: relative;
-
   @include vr(margin-bottom, $mod-xl);
+
+  @include respond-to('mobile') {
+    @include vr(margin-bottom, $mod-m);
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  position: relative;
+  text-align: center;
 }
 
 .card__title {
@@ -31,4 +40,68 @@
 .card--double {
   width: $column-width / 2;
   float: left;
+
+  @include respond-to('tablet-portrait') {
+    width: $tablet-column-width / 2;
+  }
+
+  @include respond-to('mobile') {
+    width: 100%;
+    float: none;
+  }
+
+  &:nth-of-type(even) {
+    padding-left: $unit;
+
+    @include respond-to('mobile') {
+      padding-left: 0;
+    }
+  }
+
+  &:nth-of-type(odd) {
+    padding-right: $unit;
+
+    @include respond-to('mobile') {
+      padding-right: 0;
+    }
+  }
+}
+
+.card--column {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  @include respond-to('mobile') {
+    display: block;
+  }
+
+  .card__feature,
+  .card__content {
+    flex-basis: 50%;
+  }
+
+  .card__content {
+    padding-left: $unit * 4;
+    text-align: left;
+
+    @include respond-to('mobile') {
+      padding-left: 0;
+    }
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    .card__content {
+      padding-left: 0;
+      padding-right: $unit * 4;
+      text-align: right;
+
+      @include respond-to('mobile') {
+        padding-right: 0;
+        text-align: left;
+      }
+    }
+  }
 }

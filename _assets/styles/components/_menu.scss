@@ -7,15 +7,21 @@
   @include vr-line-height($h4-font-size);
 
   @include respond-to('mobile') {
+    @include vr-font-size($h5-font-size);
+    @include vr-line-height($h5-font-size);
     @include vr-margin(0 0 $mod-xxs);
   }
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-left: 0;
+  letter-spacing: 1px;
 }
 
 .header__menu__item {
-  position: relative;
   list-style: none;
+  margin: 0 $unit;
 
   @include respond-to('mobile') {
     display: inline;
@@ -29,6 +35,10 @@
       display: none;
     }
   }
+
+  &:nth-child(even) {
+    margin-top: $unit;
+  }
 }
 
 .header__menu__link {
@@ -40,14 +50,18 @@
     content: '';
     z-index: -1;
     position: absolute;
-    top: -2px;
+    top: -4px;
     left: -4px;
-    height: 70%;
-    width: 100%;
-    background: darken($lightgrey, 10%);
+    height: 80%;
+    width: calc(100% + 8px);
+    background: rgba($green, 0.5);
   }
 
   &:hover {
     background: none;
+
+    &.current {
+      color: $text-color;
+    }
   }
 }
